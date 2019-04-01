@@ -19,16 +19,40 @@ var hours = [
   '8pm'
 ]
 
+var ulEl = document.getElementById('location1');;
+//to create an <li> element
+var liEl = document.createElement('li');
+//liEl.textContent = myBeasts[i];
+//put it in the DOM
+//ulEl.appendChild(liEl);
+
+//LOCATION 1
+ulEl = document.getElementById('location1');
+
+
 var location1 = {
   name: '1st and Pike',
   minCust: 23,
   maxCust: 65,
-  avgCust: 6.3,
-  randomCust: function(max){
-    return Math.floor(Math.random() * Math.floor(max));
+  avgCookies: 6.3,
+  randomCust: function(){
+    return Math.floor(Math.random() * Math.floor(this.maxCust));
   },
-  salesData: []
+  salesData: [],
+  displaySales: function(){
+    for(var i = 0; i < hours.length; i++){
+      let hourlySale = this.randomCust() * this.avgCookies;
+      this.salesData.push(hourlySale);
+      liEl.textContent = hourlySale;
+      console.log(hourlySale);
+      console.log(ulEl);
+      console.log(liEl);
+      ulEl.appendChild(liEl);  
+    }
+  }
 };
+
+location1.displaySales();
 
 //var output = location1.randomCust(100);
 //console.log(output);
@@ -37,7 +61,7 @@ var location2 = {
   name: 'SeaTac Airport',
   minCust: 3,
   maxCust: 24,
-  avgCust: 1.2,
+  avgCookies: 1.2,
   randomCust: function(){
     return Math.floor(Math.random() * Math.floor(max));
   },
@@ -48,7 +72,7 @@ var location3 = {
   name: 'Seattle Center',
   minCust: 11,
   maxCust: 38,
-  avgCust: 3.7,
+  avgCookies: 3.7,
   randomCust: function(){
     return Math.floor(Math.random() * Math.floor(max));
   },
@@ -59,7 +83,7 @@ var location4 = {
   name: 'Capitol Hill',
   minCust: 20,
   maxCust: 38,
-  avgCust: 2.3,
+  avgCookies: 2.3,
   randomCust: function(){
     return Math.floor(Math.random() * Math.floor(max));
   },
@@ -70,9 +94,22 @@ var location5 = {
   name: 'Alki',
   minCust: 2,
   maxCust: 16,
-  avgCust: 4.6,
+  avgCookies: 4.6,
   randomCust: function(){
     return Math.floor(Math.random() * Math.floor(max));
   },
   salesData: []
 };
+
+/////////////////////MAIN////////////////////////
+
+var ulEl;
+//to create an <li> element
+var liEl = document.createElement('li');
+//liEl.textContent = myBeasts[i];
+//put it in the DOM
+//ulEl.appendChild(liEl);
+
+//LOCATION 1
+ulEl = document.getElementById('location1');
+
