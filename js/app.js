@@ -20,7 +20,7 @@ var hours = [
   '6pm',
   '7pm',
   '8pm'
-]
+];
 
 function rand(min,max){
   //folowwing line MDN. Math.random docs
@@ -30,24 +30,24 @@ function rand(min,max){
 function makeTableHeading(){
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
-  thEl.width = "50";
+  thEl.width = '50';
   trEl.appendChild(thEl);
 
   for(let i = 0; i < hours.length; i++){
-    var thEl = document.createElement('th');
-    thEl.textContent = hours[i];
-    trEl.appendChild(thEl);
+    var thElTimes = document.createElement('th');
+    thElTimes.textContent = hours[i];
+    trEl.appendChild(thElTimes);
   }
 
-  var thEl = document.createElement('th');
-  thEl.textContent = 'Daily Location Total';
-  trEl.appendChild(thEl);
+  var thElLast = document.createElement('th');
+  thElLast.textContent = 'Daily Location Total';
+  trEl.appendChild(thElLast);
 
   table.appendChild(trEl);
 }
 
 function makeTableFooter(){
-  
+
 }
 
 ////////////////Location Constructor Func
@@ -69,7 +69,7 @@ function storeLocation(name,minCust,maxCust,avgCookies){
       this.dailyTotal += hourlySale;
     }
   };
-  
+
   this.calcSales();
   storeLocations.push(this);
 }
@@ -86,11 +86,13 @@ storeLocation.prototype.render = function(){
     trEl.appendChild(tdEl);
   }
 
-  var tdEl = document.createElement('td');
-  tdEl.textContent = this.dailyTotal;
-  trEl.appendChild(tdEl);
+  var tdElLast = document.createElement('td');
+  tdElLast.textContent = this.dailyTotal;
+  trEl.appendChild(tdElLast);
   table.appendChild(trEl);
-}
+};
+
+
 
 //////////MAIN FUNCTION CALLS ///////////////////////
 
@@ -106,4 +108,6 @@ for(let i = 0; i < storeLocations.length; i++){
   storeLocations[i].render();
   console.log('finished rendering location');
 }
+
+
 
