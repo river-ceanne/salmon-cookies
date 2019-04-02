@@ -12,5 +12,13 @@ span.box {
 }
 
 th {
-  padding: 2em;
+  font-size: 1em;
+  width: auto;
+  padding: 1em;
+  background-color: brown;
+  color: bisque;
+}
+
+table {
+  border-radius: "20";
 }

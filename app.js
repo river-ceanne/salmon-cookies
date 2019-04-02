@@ -30,7 +30,7 @@ function rand(min,max){
 function makeTableHeading(){
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
-  thEl.width = "30";
+  thEl.width = "50";
   trEl.appendChild(thEl);
 
   for(let i = 0; i < hours.length; i++){
@@ -47,12 +47,50 @@ makeTableHeading();
 ////////////////Location Constructor Func
 function storeLocation(name,minCust,maxCust,avgCookies){
   this.name = name;
-  this.minCust = minCust,
-  this.maxCust = maxCust,
-  this.avgCookies = avgCookies,
-
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookies = avgCookies;
+  this.salesData = [];
+  this.dailyTotal = 0;
+  this.calcSales = function(){
+    for(let i = 0; i < hours.length; i++){
+      let numberOfCust = rand(this.minCust,this.maxCust);
+      console.log('Random generated Amount of Customers: ' + numberOfCust);
+      let hourlySale = numberOfCust * this.avgCookies;
+      hourlySale = Math.round(hourlySale);
+      console.log('Hourly Sale : ' + hourlySale);
+      this.salesData.push(hourlySale);
+      this.dailyTotal += hourlySale;
+    }
+  };
+  
+  this.calcSales();
   storeLocations.push(this);
 }
+
+storeLocation.prototype.render = function(){
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = this.name;
+  trEl.appendChild(thEl);
+
+  for(let i = 0; i < hours.length; i++){
+    var tdEl = document.createElement('td');
+    tdEl.textContent = this.salesData[i];
+    trEl.appendChild(tdEl);
+  }
+
+  table.appendChild(trEl);
+}
+
+new storeLocation('1st and Pike',23,65,6.3);
+
+for(let i = 0; i < storeLocations.length; i++){
+  storeLocations[i].render();
+  console.log('finished rendering location');
+}
+
+
 ////////////////////////
 var location1 = {
   name: '1st and Pike',
