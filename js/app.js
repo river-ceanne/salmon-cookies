@@ -59,7 +59,7 @@ function calcHourlySales(){
 
 function calcStoreWideTotalsForDay(){
   for(let i = 0; i < hourlyTotals.length; i++){
-    StoreWideTotalsForDay += hourlyTotals[i]
+    StoreWideTotalsForDay += hourlyTotals[i];
   }
 }
 
