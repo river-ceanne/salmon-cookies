@@ -1,0 +1,12 @@
+
+body {
+  background-color: beige;
+}
+
+span.box {
+  display: inline-block;
+  height: auto;
+  padding: 5px;
+  border: 1px solid blue;    
+  background-color: yellow; 
+}
