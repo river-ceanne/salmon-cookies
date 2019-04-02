@@ -19,15 +19,6 @@ var hours = [
   '8pm'
 ]
 
-var ulEl = document.getElementById('location1');;
-//to create an <li> element
-//liEl.textContent = myBeasts[i];
-//put it in the DOM
-//ulEl.appendChild(liEl);
-
-//LOCATION 1
-ulEl = document.getElementById('location1');
-
 
 var location1 = {
   name: '1st and Pike',
@@ -39,7 +30,11 @@ var location1 = {
   },
   salesData: [],
   displaySales: function(){
-    for(var i = 0; i < hours.length; i++){
+
+    let ulEl = document.getElementById('location1');
+
+    for(let i = 0; i < hours.length; i++){
+
       let liEl = document.createElement('li');  
       let numberOfCust = this.randomCust();
       console.log('Random generated Amount of Customers: ' + numberOfCust);
@@ -53,14 +48,10 @@ var location1 = {
       console.log(ulEl);
       console.log(liEl);
       ulEl.appendChild(liEl);  
+
     }
   }
 };
-
-location1.displaySales();
-
-//var output = location1.randomCust(100);
-//console.log(output);
 
 var location2 = {
   name: 'SeaTac Airport',
@@ -68,9 +59,31 @@ var location2 = {
   maxCust: 24,
   avgCookies: 1.2,
   randomCust: function(){
-    return Math.floor(Math.random() * Math.floor(max));
+    return Math.floor(Math.random() * Math.floor(this.maxCust));
   },
-  salesData: []
+  salesData: [],
+  displaySales: function(){
+
+    let ulEl = document.getElementById('location2');
+    
+    for(let i = 0; i < hours.length; i++){
+
+      let liEl = document.createElement('li');  
+      let numberOfCust = this.randomCust();
+      console.log('Random generated Amount of Customers: ' + numberOfCust);
+      let hourlySale = numberOfCust * this.avgCookies;
+      console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
+      this.salesData.push(hourlySale); // raw unrounded data of hourly sale
+      hourlySale = Math.round(hourlySale);
+      console.log('Hourly Sale after rounding: ' + hourlySale);
+      let hourlySaleText = `${hours[i]}: ${hourlySale} cookies`;
+      liEl.textContent = hourlySaleText;
+      console.log(ulEl);
+      console.log(liEl);
+      ulEl.appendChild(liEl);  
+
+    }
+  }
 };
 
 var location3 = {
@@ -79,9 +92,31 @@ var location3 = {
   maxCust: 38,
   avgCookies: 3.7,
   randomCust: function(){
-    return Math.floor(Math.random() * Math.floor(max));
+    return Math.floor(Math.random() * Math.floor(this.maxCust));
   },
-  salesData: []
+  salesData: [],
+  displaySales: function(){
+
+    let ulEl = document.getElementById('location3');
+    
+    for(let i = 0; i < hours.length; i++){
+
+      let liEl = document.createElement('li');  
+      let numberOfCust = this.randomCust();
+      console.log('Random generated Amount of Customers: ' + numberOfCust);
+      let hourlySale = numberOfCust * this.avgCookies;
+      console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
+      this.salesData.push(hourlySale); // raw unrounded data of hourly sale
+      hourlySale = Math.round(hourlySale);
+      console.log('Hourly Sale after rounding: ' + hourlySale);
+      let hourlySaleText = `${hours[i]}: ${hourlySale} cookies`;
+      liEl.textContent = hourlySaleText;
+      console.log(ulEl);
+      console.log(liEl);
+      ulEl.appendChild(liEl);  
+
+    }
+  }
 };
 
 var location4 = {
@@ -90,9 +125,31 @@ var location4 = {
   maxCust: 38,
   avgCookies: 2.3,
   randomCust: function(){
-    return Math.floor(Math.random() * Math.floor(max));
+    return Math.floor(Math.random() * Math.floor(this.maxCust));
   },
-  salesData: []
+  salesData: [],
+  displaySales: function(){
+
+    let ulEl = document.getElementById('location4');
+    
+    for(let i = 0; i < hours.length; i++){
+
+      let liEl = document.createElement('li');  
+      let numberOfCust = this.randomCust();
+      console.log('Random generated Amount of Customers: ' + numberOfCust);
+      let hourlySale = numberOfCust * this.avgCookies;
+      console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
+      this.salesData.push(hourlySale); // raw unrounded data of hourly sale
+      hourlySale = Math.round(hourlySale);
+      console.log('Hourly Sale after rounding: ' + hourlySale);
+      let hourlySaleText = `${hours[i]}: ${hourlySale} cookies`;
+      liEl.textContent = hourlySaleText;
+      console.log(ulEl);
+      console.log(liEl);
+      ulEl.appendChild(liEl);  
+
+    }
+  }
 };
 
 var location5 = {
@@ -101,20 +158,37 @@ var location5 = {
   maxCust: 16,
   avgCookies: 4.6,
   randomCust: function(){
-    return Math.floor(Math.random() * Math.floor(max));
+    return Math.floor(Math.random() * Math.floor(this.maxCust));
   },
-  salesData: []
+  salesData: [],
+  displaySales: function(){
+
+    let ulEl = document.getElementById('location5');
+    
+    for(let i = 0; i < hours.length; i++){
+
+      let liEl = document.createElement('li');  
+      let numberOfCust = this.randomCust();
+      console.log('Random generated Amount of Customers: ' + numberOfCust);
+      let hourlySale = numberOfCust * this.avgCookies;
+      console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
+      this.salesData.push(hourlySale); // raw unrounded data of hourly sale
+      hourlySale = Math.round(hourlySale);
+      console.log('Hourly Sale after rounding: ' + hourlySale);
+      let hourlySaleText = `${hours[i]}: ${hourlySale} cookies`;
+      liEl.textContent = hourlySaleText;
+      console.log(ulEl);
+      console.log(liEl);
+      ulEl.appendChild(liEl);  
+
+    }
+  }
 };
 
-/////////////////////MAIN////////////////////////
+/////////////////////MAIN--FUNCTION CALLS////////////////////////
 
-var ulEl;
-//to create an <li> element
-var liEl = document.createElement('li');
-//liEl.textContent = myBeasts[i];
-//put it in the DOM
-//ulEl.appendChild(liEl);
-
-//LOCATION 1
-ulEl = document.getElementById('location1');
-
+location1.displaySales();
+location2.displaySales();
+location3.displaySales();
+location4.displaySales();
+location5.displaySales();
