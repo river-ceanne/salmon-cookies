@@ -45,10 +45,11 @@ var location1 = {
       console.log('Random generated Amount of Customers: ' + numberOfCust);
       let hourlySale = numberOfCust * this.avgCookies;
       console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
-      this.salesData.push(hourlySale);
+      this.salesData.push(hourlySale); // raw unrounded data of hourly sale
       hourlySale = Math.round(hourlySale);
       console.log('Hourly Sale after rounding: ' + hourlySale);
-      liEl.textContent = hourlySale;
+      let hourlySaleText = `${hours[i]}: ${hourlySale} cookies`;
+      liEl.textContent = hourlySaleText;
       console.log(ulEl);
       console.log(liEl);
       ulEl.appendChild(liEl);  
