@@ -7,6 +7,6 @@ span.box {
   display: inline-block;
   height: auto;
   padding: 5px;
-  border: 1px solid blue;    
-  background-color: yellow; 
+  border: 1px solid darkgoldenrod;    
+  background-color: lightgoldenrodyellow; 
 }

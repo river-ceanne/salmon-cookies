@@ -19,6 +19,11 @@ var hours = [
   '8pm'
 ]
 
+function rand(min,max){
+  //folowwing line MDN. Math.random docs
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 var location1 = {
   name: '1st and Pike',
   minCust: 23,
@@ -55,6 +60,9 @@ var location1 = {
     liEl.textContent = `Total: ${total} cookies`;
     ulEl.appendChild(liEl);
   }
+  //render: funvction(){}
+  //calcCustomerPerHour: function()
+  //calcCookiesEachHour: function()
 };
 
 var location2 = {
