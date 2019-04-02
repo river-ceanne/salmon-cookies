@@ -39,10 +39,16 @@ function makeTableHeading(){
     trEl.appendChild(thEl);
   }
 
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Daily Location Total';
+  trEl.appendChild(thEl);
+
   table.appendChild(trEl);
 }
 
-makeTableHeading();
+function makeTableFooter(){
+  
+}
 
 ////////////////Location Constructor Func
 function storeLocation(name,minCust,maxCust,avgCookies){
@@ -80,8 +86,15 @@ storeLocation.prototype.render = function(){
     trEl.appendChild(tdEl);
   }
 
+  var tdEl = document.createElement('td');
+  tdEl.textContent = this.dailyTotal;
+  trEl.appendChild(tdEl);
   table.appendChild(trEl);
 }
+
+//////////MAIN FUNCTION CALLS ///////////////////////
+
+makeTableHeading();
 
 new storeLocation('1st and Pike',23,65,6.3);
 new storeLocation('SeaTac Airport',3,34,1.2);
@@ -93,3 +106,4 @@ for(let i = 0; i < storeLocations.length; i++){
   storeLocations[i].render();
   console.log('finished rendering location');
 }
+
