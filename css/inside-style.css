@@ -22,3 +22,7 @@ th {
 table {
   border-radius: "20";
 }
+
+td {
+  padding: 1em;
+}

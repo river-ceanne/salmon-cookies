@@ -3,6 +3,7 @@
 var storeLocations = [];
 var table = document.getElementById('hourlySales');
 var hourlyTotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var StoreWideTotalsForDay = 0;
 
 var hours = [
   '6am',
@@ -56,6 +57,12 @@ function calcHourlySales(){
 
 }
 
+function calcStoreWideTotalsForDay(){
+  for(let i = 0; i < hourlyTotals.length; i++){
+    StoreWideTotalsForDay += hourlyTotals[i]
+  }
+}
+
 function makeTableFooter(){
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
@@ -69,7 +76,7 @@ function makeTableFooter(){
   }
 
   var thElLast = document.createElement('th');
-  thElLast.textContent = 'x';
+  thElLast.textContent = StoreWideTotalsForDay;
   trEl.appendChild(thElLast);
 
   table.appendChild(trEl);
@@ -134,5 +141,6 @@ for(let i = 0; i < storeLocations.length; i++){
 }
 
 calcHourlySales();
+calcStoreWideTotalsForDay();
 makeTableFooter();
 
