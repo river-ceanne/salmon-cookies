@@ -19,7 +19,6 @@ var hours = [
   '8pm'
 ]
 
-
 var location1 = {
   name: '1st and Pike',
   minCust: 23,
@@ -32,24 +31,29 @@ var location1 = {
   displaySales: function(){
 
     let ulEl = document.getElementById('location1');
+    var total = 0;
 
     for(let i = 0; i < hours.length; i++){
 
       let liEl = document.createElement('li');  
       let numberOfCust = this.randomCust();
-      console.log('Random generated Amount of Customers: ' + numberOfCust);
+      //console.log('Random generated Amount of Customers: ' + numberOfCust);
       let hourlySale = numberOfCust * this.avgCookies;
-      console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
-      this.salesData.push(hourlySale); // raw unrounded data of hourly sale
+      //console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
       hourlySale = Math.round(hourlySale);
-      console.log('Hourly Sale after rounding: ' + hourlySale);
+      this.salesData.push(hourlySale);
+      total += hourlySale;
+      //console.log('Hourly Sale after rounding: ' + hourlySale);
       let hourlySaleText = `${hours[i]}: ${hourlySale} cookies`;
       liEl.textContent = hourlySaleText;
-      console.log(ulEl);
-      console.log(liEl);
+      //console.log(ulEl);
+      //console.log(liEl);
       ulEl.appendChild(liEl);  
 
     }
+    let liEl = document.createElement('li');  
+    liEl.textContent = `Total: ${total} cookies`;
+    ulEl.appendChild(liEl);
   }
 };
 
@@ -65,24 +69,29 @@ var location2 = {
   displaySales: function(){
 
     let ulEl = document.getElementById('location2');
-    
+    var total = 0;
+
     for(let i = 0; i < hours.length; i++){
 
       let liEl = document.createElement('li');  
       let numberOfCust = this.randomCust();
-      console.log('Random generated Amount of Customers: ' + numberOfCust);
+      //console.log('Random generated Amount of Customers: ' + numberOfCust);
       let hourlySale = numberOfCust * this.avgCookies;
-      console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
-      this.salesData.push(hourlySale); // raw unrounded data of hourly sale
+      //console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
       hourlySale = Math.round(hourlySale);
-      console.log('Hourly Sale after rounding: ' + hourlySale);
+      this.salesData.push(hourlySale);
+      total += hourlySale;
+      //console.log('Hourly Sale after rounding: ' + hourlySale);
       let hourlySaleText = `${hours[i]}: ${hourlySale} cookies`;
       liEl.textContent = hourlySaleText;
-      console.log(ulEl);
-      console.log(liEl);
+      //console.log(ulEl);
+      //console.log(liEl);
       ulEl.appendChild(liEl);  
 
     }
+    let liEl = document.createElement('li');  
+    liEl.textContent = `Total: ${total} cookies`;
+    ulEl.appendChild(liEl);
   }
 };
 
@@ -98,24 +107,29 @@ var location3 = {
   displaySales: function(){
 
     let ulEl = document.getElementById('location3');
-    
+    var total = 0;
+
     for(let i = 0; i < hours.length; i++){
 
       let liEl = document.createElement('li');  
       let numberOfCust = this.randomCust();
-      console.log('Random generated Amount of Customers: ' + numberOfCust);
+      //console.log('Random generated Amount of Customers: ' + numberOfCust);
       let hourlySale = numberOfCust * this.avgCookies;
-      console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
-      this.salesData.push(hourlySale); // raw unrounded data of hourly sale
+      //console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
       hourlySale = Math.round(hourlySale);
-      console.log('Hourly Sale after rounding: ' + hourlySale);
+      this.salesData.push(hourlySale);
+      total += hourlySale;
+      //console.log('Hourly Sale after rounding: ' + hourlySale);
       let hourlySaleText = `${hours[i]}: ${hourlySale} cookies`;
       liEl.textContent = hourlySaleText;
-      console.log(ulEl);
-      console.log(liEl);
+      //console.log(ulEl);
+      //console.log(liEl);
       ulEl.appendChild(liEl);  
 
     }
+    let liEl = document.createElement('li');  
+    liEl.textContent = `Total: ${total} cookies`;
+    ulEl.appendChild(liEl);
   }
 };
 
@@ -131,24 +145,29 @@ var location4 = {
   displaySales: function(){
 
     let ulEl = document.getElementById('location4');
-    
+    var total = 0;
+
     for(let i = 0; i < hours.length; i++){
 
       let liEl = document.createElement('li');  
       let numberOfCust = this.randomCust();
-      console.log('Random generated Amount of Customers: ' + numberOfCust);
+      //console.log('Random generated Amount of Customers: ' + numberOfCust);
       let hourlySale = numberOfCust * this.avgCookies;
-      console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
-      this.salesData.push(hourlySale); // raw unrounded data of hourly sale
+      //console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
       hourlySale = Math.round(hourlySale);
-      console.log('Hourly Sale after rounding: ' + hourlySale);
+      this.salesData.push(hourlySale);
+      total += hourlySale;
+      //console.log('Hourly Sale after rounding: ' + hourlySale);
       let hourlySaleText = `${hours[i]}: ${hourlySale} cookies`;
       liEl.textContent = hourlySaleText;
-      console.log(ulEl);
-      console.log(liEl);
+      //console.log(ulEl);
+      //console.log(liEl);
       ulEl.appendChild(liEl);  
 
     }
+    let liEl = document.createElement('li');  
+    liEl.textContent = `Total: ${total} cookies`;
+    ulEl.appendChild(liEl);
   }
 };
 
@@ -164,24 +183,29 @@ var location5 = {
   displaySales: function(){
 
     let ulEl = document.getElementById('location5');
-    
+    var total = 0;
+
     for(let i = 0; i < hours.length; i++){
 
       let liEl = document.createElement('li');  
       let numberOfCust = this.randomCust();
-      console.log('Random generated Amount of Customers: ' + numberOfCust);
+      //console.log('Random generated Amount of Customers: ' + numberOfCust);
       let hourlySale = numberOfCust * this.avgCookies;
-      console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
-      this.salesData.push(hourlySale); // raw unrounded data of hourly sale
+      //console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
       hourlySale = Math.round(hourlySale);
-      console.log('Hourly Sale after rounding: ' + hourlySale);
+      this.salesData.push(hourlySale);
+      total += hourlySale;
+      //console.log('Hourly Sale after rounding: ' + hourlySale);
       let hourlySaleText = `${hours[i]}: ${hourlySale} cookies`;
       liEl.textContent = hourlySaleText;
-      console.log(ulEl);
-      console.log(liEl);
+      //console.log(ulEl);
+      //console.log(liEl);
       ulEl.appendChild(liEl);  
 
     }
+    let liEl = document.createElement('li');  
+    liEl.textContent = `Total: ${total} cookies`;
+    ulEl.appendChild(liEl);
   }
 };
 
