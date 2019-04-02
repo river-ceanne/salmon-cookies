@@ -2,7 +2,7 @@
 
 var storeLocations = [];
 var table = document.getElementById('hourlySales');
-var hourlyTotals = [];
+var hourlyTotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 var hours = [
   '6am',
@@ -46,12 +46,37 @@ function makeTableHeading(){
   table.appendChild(trEl);
 }
 
-function makeTableFooter(){
+function calcHourlySales(){
+  for(let i = 0; i < storeLocations.length; i++){
+    for(let ii = 0; ii < hours.length; ii++){
+      hourlyTotals[ii] += storeLocations[i].salesData[ii];
+      console.log('Hour Total: ' + hourlyTotals[ii]);
+    }
+  }
 
 }
 
+function makeTableFooter(){
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Store Hourly Totals';
+  trEl.appendChild(thEl);
+
+  for(let i = 0; i < hours.length; i++){
+    var tdElTimes = document.createElement('td');
+    tdElTimes.textContent = hourlyTotals[i];
+    trEl.appendChild(tdElTimes);
+  }
+
+  var thElLast = document.createElement('th');
+  thElLast.textContent = 'x';
+  trEl.appendChild(thElLast);
+
+  table.appendChild(trEl);
+}
+
 ////////////////Location Constructor Func
-function storeLocation(name,minCust,maxCust,avgCookies){
+function StoreLocation(name,minCust,maxCust,avgCookies){
   this.name = name;
   this.minCust = minCust;
   this.maxCust = maxCust;
@@ -74,7 +99,7 @@ function storeLocation(name,minCust,maxCust,avgCookies){
   storeLocations.push(this);
 }
 
-storeLocation.prototype.render = function(){
+StoreLocation.prototype.render = function(){
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
   thEl.textContent = this.name;
@@ -93,21 +118,21 @@ storeLocation.prototype.render = function(){
 };
 
 
-
 //////////MAIN FUNCTION CALLS ///////////////////////
 
 makeTableHeading();
 
-new storeLocation('1st and Pike',23,65,6.3);
-new storeLocation('SeaTac Airport',3,34,1.2);
-new storeLocation('Seattle Center',11,38,3.7);
-new storeLocation('Capitol Hill',20,38,2.3);
-new storeLocation('Alki',2,16,4.6);
+new StoreLocation('1st and Pike',23,65,6.3);
+new StoreLocation('SeaTac Airport',3,34,1.2);
+new StoreLocation('Seattle Center',11,38,3.7);
+new StoreLocation('Capitol Hill',20,38,2.3);
+new StoreLocation('Alki',2,16,4.6);
 
 for(let i = 0; i < storeLocations.length; i++){
   storeLocations[i].render();
   console.log('finished rendering location');
 }
 
-
+calcHourlySales();
+makeTableFooter();
 
