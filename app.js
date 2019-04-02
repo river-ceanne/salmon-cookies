@@ -21,7 +21,6 @@ var hours = [
 
 var ulEl = document.getElementById('location1');;
 //to create an <li> element
-var liEl = document.createElement('li');
 //liEl.textContent = myBeasts[i];
 //put it in the DOM
 //ulEl.appendChild(liEl);
@@ -41,10 +40,15 @@ var location1 = {
   salesData: [],
   displaySales: function(){
     for(var i = 0; i < hours.length; i++){
-      let hourlySale = this.randomCust() * this.avgCookies;
+      let liEl = document.createElement('li');  
+      let numberOfCust = this.randomCust();
+      console.log('Random generated Amount of Customers: ' + numberOfCust);
+      let hourlySale = numberOfCust * this.avgCookies;
+      console.log('Hourly Sale before rounding to nearest integer: ' + hourlySale);
       this.salesData.push(hourlySale);
+      hourlySale = Math.round(hourlySale);
+      console.log('Hourly Sale after rounding: ' + hourlySale);
       liEl.textContent = hourlySale;
-      console.log(hourlySale);
       console.log(ulEl);
       console.log(liEl);
       ulEl.appendChild(liEl);  
