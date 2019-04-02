@@ -1,5 +1,8 @@
-
 'use strict';
+
+var storeLocations = [];
+var table = document.getElementById('hourlySales');
+var hourlyTotals = [];
 
 var hours = [
   '6am',
@@ -24,6 +27,33 @@ function rand(min,max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function makeTableHeading(){
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.width = "30";
+  trEl.appendChild(thEl);
+
+  for(let i = 0; i < hours.length; i++){
+    var thEl = document.createElement('th');
+    thEl.textContent = hours[i];
+    trEl.appendChild(thEl);
+  }
+
+  table.appendChild(trEl);
+}
+
+makeTableHeading();
+
+////////////////Location Constructor Func
+function storeLocation(name,minCust,maxCust,avgCookies){
+  this.name = name;
+  this.minCust = minCust,
+  this.maxCust = maxCust,
+  this.avgCookies = avgCookies,
+
+  storeLocations.push(this);
+}
+////////////////////////
 var location1 = {
   name: '1st and Pike',
   minCust: 23,
@@ -219,8 +249,8 @@ var location5 = {
 
 /////////////////////MAIN--FUNCTION CALLS////////////////////////
 
-location1.displaySales();
-location2.displaySales();
-location3.displaySales();
-location4.displaySales();
-location5.displaySales();
+//location1.displaySales();
+//location2.displaySales();
+//location3.displaySales();
+//location4.displaySales();
+//location5.displaySales();

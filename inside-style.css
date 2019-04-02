@@ -10,3 +10,7 @@ span.box {
   border: 1px solid darkgoldenrod;    
   background-color: lightgoldenrodyellow; 
 }
+
+th {
+  padding: 2em;
+}
