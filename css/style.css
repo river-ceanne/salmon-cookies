@@ -1,6 +1,7 @@
 
 body {
   background-color: darksalmon;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -48,4 +49,8 @@ li a {
 
 li a:hover {
   background-color: #111;
+}
+
+.data {
+  font-family: 'Montserrat', sans-serif;
 }
