@@ -4,7 +4,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-h1 {
+h1,h2 {
   text-align: center;
 }
 
@@ -15,7 +15,8 @@ h1 {
 
 .roundImage {
   border-radius: 20px;
-  border: 3px solid darkgoldenrod;
+  border: 5px solid #333;
+  padding: 14px;
 }
 
 .center {
@@ -57,11 +58,17 @@ li a:hover {
 
 div.footer{
   background-color: #333;
-  position: fixed;
   left: 0;
-  bottom: 0;
+  right: 0;
+  bottom: 1;
   width: 100%;
   color: white;
   text-align: center;
   padding: 30px;
+}
+
+span {
+  display: inline-block;
+  padding-right: 20px;
+  text-align: left;
 }
