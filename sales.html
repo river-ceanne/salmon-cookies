@@ -14,16 +14,16 @@
 
     <br>
 
-    <form method="POST" >
-        <fieldset>
-        Location Name: <br><input type = "text" name = "title" size=75><br><br>
-        Minimum # of Customers: <br><input type = "text" name = "author" size=50><br><br>
-        Maximum # of Customers: <br><input type = "text" name = "edition"><br><br>
-        Average # of Cookies Per Customer:<br> <input type = "text" name = "isbn13"><br><br>
+    <form id="location-form" >
+      <fieldset>
+        Location Name: <br><input type = "text" name = "locName" size=75><br><br>
+        Minimum # of Customers: <br><input type = "number" name = "minCust" size=50><br><br>
+        Maximum # of Customers: <br><input type = "number" name = "maxCust"><br><br>
+        Average # of Cookies Per Customer:<br> <input type = "number" name = "avgCookies" step=0.01><br><br>
         
         <input type = "submit" class="button" value="Add Location">
-        </fieldset>
-        </form>
+      </fieldset>
+    </form>
 
     <script src="js/app.js"></script>
 
