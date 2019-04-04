@@ -35,3 +35,9 @@ fieldset {
   margin-top: 20px;
   border-color: brown;
 }
+
+input.button {
+  border-radius: 20px;
+  background-color: brown;
+  color: beige;
+}

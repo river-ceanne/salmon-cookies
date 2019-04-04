@@ -149,14 +149,50 @@ function addLoc(e){
   var minCustText = e.srcElement.form[2].value;
   var maxCustText = e.srcElement.form[3].value;
   var avgCookiesText = e.srcElement.form[4].value;
-  new StoreLocation(locNameText,minCustText,maxCustText,avgCookiesText);
-  //renderSalesTable();
-  table.innerHTML = "";
-  var hourlyTotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-  var StoreWideTotalsForDay = 0;
-  renderSalesTable();
+  var validAvg = validateAvg(avgCookiesText);
+  console.log(validAvg);
+  var validMinMax = validateMinMax(minCustText,maxCustText);
+  console.log(validMinMax);
+  var validText = validateText(locNameText);
+  console.log(validText);
+  if(validAvg && validMinMax && validText){
+    new StoreLocation(locNameText,minCustText,maxCustText,avgCookiesText);
+    //renderSalesTable();
+    table.innerHTML = '';
+    hourlyTotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    StoreWideTotalsForDay = 0;
+    renderSalesTable();
+  }
+}
+/////////event input validation
+
+function validateText(text){
+  if(text === null || text === ''){
+    alert('Input a valid text.');
+    return false;
+
+  }else{
+    return true;
+  }
 }
 
+function validateMinMax(min,max){
+  if(min > max || min < 0){
+    alert('Input a valid minimum and maximum number.');
+    return false;
+  }else{
+    return true;
+  }
+}
+
+function validateAvg(avg){
+  if(avg < 0){
+    alert('How did this happen? Enter a valid number.');
+    return false;
+  }else{
+    return true;
+  }
+}
 
 //////////MAIN FUNCTION CALLS ///////////////////////
 
