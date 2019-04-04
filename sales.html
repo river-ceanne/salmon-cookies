@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Salmon Cookies Sales</title>
-    <link rel="stylesheet" href = "css/inside-style.css">    
+    <title>Pat's Salmon Cookies Sales</title>
+    <link rel="stylesheet" href = "css/inside-style.css">  
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">  
   </head>
   <body>
 
     <h2>
-      Salmon Cookies - Sales
+      Pat's Salmon Cookies - Sales
     </h2>
     
     <table class="center" id="hourlySales"></table>
+
+    <br>
+
+    <form id="location-form" >
+      <fieldset>
+        <legend>Add Location Form</legend>
+        Location Name: <br><input type = "text" id = "locName" size=75><br><br>
+        Minimum # of Customers: <br><input type = "number" id = "minCust" size=50 min="0"><br><br>
+        Maximum # of Customers: <br><input type = "number" id = "maxCust"><br><br>
+        Average # of Cookies Per Customer:<br> <input type = "number" id = "avgCookies" step=0.01><br><br>
+        
+        <input id="submit" type = "button" class="button" value="Add Location">
+      </fieldset>
+    </form>
 
     <script src="js/app.js"></script>
 

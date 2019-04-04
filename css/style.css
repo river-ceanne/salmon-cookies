@@ -1,9 +1,15 @@
 
 body {
   background-color: darksalmon;
+  font-family: 'Marcellus SC', serif;
 }
 
-h1 {
+h1,h2 {
+  text-align: center;
+}
+
+p {
+  font-size: 1.5em;
   text-align: center;
 }
 
@@ -14,7 +20,8 @@ h1 {
 
 .roundImage {
   border-radius: 20px;
-  border: 3px solid darkgoldenrod;
+  border: 5px solid #333;
+  padding: 14px;
 }
 
 .center {
@@ -48,4 +55,21 @@ li a {
 
 li a:hover {
   background-color: #111;
+}
+
+div.footer{
+  background-color: #333;
+  left: 0;
+  right: 0;
+  bottom: 1;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+span {
+  display: inline-block;
+  padding-right: 20px;
+  text-align: left;
 }

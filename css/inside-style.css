@@ -1,6 +1,7 @@
 
 body {
   background-color: beige;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
@@ -26,4 +27,17 @@ table.center {
 
 td {
   padding: 1em;
+}
+
+fieldset {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 20px;
+  border-color: brown;
+}
+
+input.button {
+  border-radius: 20px;
+  background-color: brown;
+  color: beige;
 }
