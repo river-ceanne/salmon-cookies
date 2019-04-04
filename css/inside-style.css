@@ -1,6 +1,7 @@
 
 body {
   background-color: beige;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
@@ -32,4 +33,5 @@ fieldset {
   margin-left: 100px;
   margin-right: 100px;
   margin-top: 20px;
+  border-color: brown;
 }

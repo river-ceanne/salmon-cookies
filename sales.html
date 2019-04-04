@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Salmon Cookies Sales</title>
-    <link rel="stylesheet" href = "css/inside-style.css">    
+    <title>Pat's Salmon Cookies Sales</title>
+    <link rel="stylesheet" href = "css/inside-style.css">  
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">  
   </head>
   <body>
 
     <h2>
-      Salmon Cookies - Sales
+      Pat's Salmon Cookies - Sales
     </h2>
     
     <table class="center" id="hourlySales"></table>
@@ -16,12 +17,13 @@
 
     <form id="location-form" >
       <fieldset>
-        Location Name: <br><input type = "text" name = "locName" size=75><br><br>
-        Minimum # of Customers: <br><input type = "number" name = "minCust" size=50><br><br>
-        Maximum # of Customers: <br><input type = "number" name = "maxCust"><br><br>
-        Average # of Cookies Per Customer:<br> <input type = "number" name = "avgCookies" step=0.01><br><br>
+        <legend>Add Location Form</legend>
+        Location Name: <br><input type = "text" id = "locName" size=75 required><br><br>
+        Minimum # of Customers: <br><input type = "number" id = "minCust" size=50 min="0" required><br><br>
+        Maximum # of Customers: <br><input type = "number" id = "maxCust" required><br><br>
+        Average # of Cookies Per Customer:<br> <input type = "number" id = "avgCookies" step=0.01 required><br><br>
         
-        <input type = "submit" class="button" value="Add Location">
+        <input id="submit" type = "button" class="button" value="Add Location">
       </fieldset>
     </form>
 

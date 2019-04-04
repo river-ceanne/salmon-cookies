@@ -1,10 +1,15 @@
 
 body {
   background-color: darksalmon;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Marcellus SC', serif;
 }
 
 h1,h2 {
+  text-align: center;
+}
+
+p {
+  font-size: 1.5em;
   text-align: center;
 }
 
@@ -50,10 +55,6 @@ li a {
 
 li a:hover {
   background-color: #111;
-}
-
-.data {
-  font-family: 'Montserrat', sans-serif;
 }
 
 div.footer{

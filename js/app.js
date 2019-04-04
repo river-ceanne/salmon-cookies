@@ -82,7 +82,22 @@ function makeTableFooter(){
   table.appendChild(trEl);
 }
 
-////////////////Location Constructor Func
+function renderSalesTable(){
+
+  makeTableHeading();
+
+  for(let i = 0; i < storeLocations.length; i++){
+    storeLocations[i].render();
+    console.log('finished rendering location');
+  }
+
+  calcHourlySales();
+  calcStoreWideTotalsForDay();
+  makeTableFooter();
+
+}
+
+////////////////Location Constructor Func///////////////
 function StoreLocation(name,minCust,maxCust,avgCookies){
   this.name = name;
   this.minCust = minCust;
@@ -124,10 +139,26 @@ StoreLocation.prototype.render = function(){
   table.appendChild(trEl);
 };
 
+///////////////////////////////////////////////////////////////
+
+//EVENT HANDLER(s)
+function addLoc(e){
+
+  console.log('addLoc event handler started');
+  var locNameText = e.srcElement.form[1].value;
+  var minCustText = e.srcElement.form[2].value;
+  var maxCustText = e.srcElement.form[3].value;
+  var avgCookiesText = e.srcElement.form[4].value;
+  new StoreLocation(locNameText,minCustText,maxCustText,avgCookiesText);
+  //renderSalesTable();
+  table.innerHTML = "";
+  var hourlyTotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  var StoreWideTotalsForDay = 0;
+  renderSalesTable();
+}
+
 
 //////////MAIN FUNCTION CALLS ///////////////////////
-
-makeTableHeading();
 
 new StoreLocation('1st and Pike',23,65,6.3);
 new StoreLocation('SeaTac Airport',3,34,1.2);
@@ -135,12 +166,12 @@ new StoreLocation('Seattle Center',11,38,3.7);
 new StoreLocation('Capitol Hill',20,38,2.3);
 new StoreLocation('Alki',2,16,4.6);
 
-for(let i = 0; i < storeLocations.length; i++){
-  storeLocations[i].render();
-  console.log('finished rendering location');
-}
+renderSalesTable();
 
-calcHourlySales();
-calcStoreWideTotalsForDay();
-makeTableFooter();
+var locationFormSubmit = document.getElementById('submit');
+locationFormSubmit.addEventListener('click',addLoc);
 
+/*locationFormSubmit.addEventListener('click',function(e){
+  console.log(e.srcElement.form[2].value);//gets the min value
+});
+*/
