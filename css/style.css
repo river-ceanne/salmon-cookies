@@ -67,6 +67,7 @@ div.footer{
   color: white;
   text-align: center;
   padding: 30px;
+  margin-top: 20px;
 }
 
 span {
@@ -82,10 +83,35 @@ span.contact {
 
 span.hours {
   float: right;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 
 .curvy-image {
   border-radius: 20px;
   padding: 10px;
+}
+
+div.small-images img {
+  padding: 20px;
+  display: inline-block;
+  border-radius: 30px;
+}
+
+div.small-images {
+  background-color: #333;
+  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: white;
+}
+
+div img {
+  margin-bottom: 20px;
+}
+
+.curvy-image, .chinook {
+  display: block;
+margin-left: auto;
+margin-right: auto;
 }
